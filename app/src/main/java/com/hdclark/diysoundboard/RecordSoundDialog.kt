@@ -169,14 +169,18 @@ class RecordSoundDialog : DialogFragment() {
     private fun playRecording(statusText: TextView) {
         if (!hasRecording || tempFile?.exists() != true) return
         mediaPlayer?.release()
+        mediaPlayer = null
         try {
             mediaPlayer = MediaPlayer().apply {
                 setDataSource(tempFile!!.absolutePath)
                 prepare()
                 start()
-                setOnCompletionListener {
+                setOnCompletionListener { completedPlayer ->
                     statusText.text = getString(R.string.status_playback_done)
-                    release()
+                    completedPlayer.release()
+                    if (mediaPlayer === completedPlayer) {
+                        mediaPlayer = null
+                    }
                 }
             }
             statusText.text = getString(R.string.status_playing)
