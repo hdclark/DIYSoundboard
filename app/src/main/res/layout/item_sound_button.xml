@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Root view is SquareFrameLayout so each grid cell is always square.
+    The RecyclerView item width is match_parent (half the screen in a 2-column
+    GridLayoutManager), and SquareFrameLayout.onMeasure forces height == width.
+-->
+<com.hdclark.diysoundboard.SquareFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/button_background"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="8dp">
+
+    <!-- Shown when the slot is empty (tap to record) -->
+    <ImageView
+        android:id="@+id/iv_mic"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_mic"
+        android:contentDescription="@string/add_sound" />
+
+    <!-- Shown when the slot has a recording -->
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:maxLines="4"
+        android:ellipsize="end" />
+
+</com.hdclark.diysoundboard.SquareFrameLayout>
