@@ -139,6 +139,11 @@ class RecordSoundDialog : DialogFragment() {
             playButton.isEnabled = false
             statusText.text = getString(R.string.status_recording)
         } catch (e: Exception) {
+            mediaRecorder?.release()
+            mediaRecorder = null
+            isRecording = false
+            recordButton.text = getString(R.string.record)
+            playButton.isEnabled = hasRecording
             statusText.text = getString(R.string.error_recording_failed, e.message)
         }
     }
