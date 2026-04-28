@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DIY Soundboard</string>
+    <string name="add_sound">Add Sound</string>
+    <string name="edit_sound">Edit Sound</string>
+    <string name="export">Export</string>
+    <string name="export_chooser_title">Export Soundboard</string>
+
+    <!-- Status messages -->
+    <string name="status_loaded">Recording loaded. Press Record to replace.</string>
+    <string name="status_recording">Recording…</string>
+    <string name="status_recorded">Recording complete. Press Play to preview.</string>
+    <string name="status_playing">Playing…</string>
+    <string name="status_playback_done">Playback complete.</string>
+    <string name="status_press_record">Press Record to start.</string>
+
+    <!-- Button labels -->
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="record_again">Record Again</string>
+    <string name="play">Play</string>
+
+    <!-- Error messages -->
+    <string name="error_no_label">Please enter a label.</string>
+    <string name="error_no_recording">Please record a sound first.</string>
+    <string name="error_no_permission">Microphone permission is required.</string>
+    <string name="error_recording_failed">Failed to start recording: %1$s</string>
+    <string name="error_stop_failed">Error stopping recording: %1$s</string>
+    <string name="error_playback_failed">Playback failed: %1$s</string>
+    <string name="error_file_missing">Sound file not found.</string>
+    <string name="error_export_failed">Export failed: %1$s</string>
+</resources>
