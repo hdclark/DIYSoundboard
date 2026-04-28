@@ -106,7 +106,13 @@ class MainActivity : AppCompatActivity() {
                 setDataSource(file.absolutePath)
                 prepare()
                 start()
-                setOnCompletionListener { release() }
+                setOnCompletionListener { completedPlayer ->
+                    completedPlayer.setOnCompletionListener(null)
+                    completedPlayer.release()
+                    if (mediaPlayer === completedPlayer) {
+                        mediaPlayer = null
+                    }
+                }
             }
         } catch (e: Exception) {
             Toast.makeText(this, getString(R.string.error_playback_failed, e.message), Toast.LENGTH_SHORT).show()
